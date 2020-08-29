@@ -17,16 +17,7 @@ public class EchoServerMT {
         int portNumber = Integer.parseInt(args[0]);
         boolean listening = true;
 
-        try (ServerSocket serverSocket = new ServerSocket(portNumber)) {
-            while (listening) {
-                Socket s = serverSocket.accept();
-                new EchoServerMTThread(s).start();
-                System.out.println("[INFO] Accepted connection from " + s.getRemoteSocketAddress());
-            }
-        } catch (IOException e) {
-            System.err.println("Could not listen on port " + portNumber);
-            System.exit(-1);
-        }
+        // TODO: Ihr Multithreaded-Server Code hier ...
     }
 
 }

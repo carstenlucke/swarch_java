@@ -17,24 +17,6 @@ public class EchoServerMTThread extends Thread {
 
     public void run() {
 
-        try (
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
-        ) {
-            String inputLine;
-
-            while ((inputLine = in.readLine()) != null) {
-
-                out.println(inputLine);
-
-                if (inputLine.equals("Bye.")) {
-                    break;
-                }
-            }
-            clientSocket.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // TODO: Ihr Echo-Serverthread Code hier ...
     }
 }
