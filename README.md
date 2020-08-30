@@ -33,6 +33,7 @@ Voraussetzung ist, dass Sie Docker lokal auf Ihrem Rechner installiert haben.
 
 - Docker-Container bauen: `$ docker build -t swarch_java .`
 - Docker-Container starten und auszuführende Java-Klasse (Echo-Server) angeben: `$ docker run -it -p 9999:9999 swarch_java de/thm/swarch/sockets/echoserver/EchoServer 9999`, startet den EchoServer auf Port `9999` und macht den Container-Port auf dem Host verfügbar 
+- EchoClient starten: `$ docker run -it swarch_java de/thm/swarch/sockets/echoclient/EchoClient host.docker.internal 9999`. Der Client darf sich nicht zu `localhost`verbinden, da dies der Docker-Container ist. Der Server, wenn wie oben angegeben gestartet, bindet das Socket aber an den Host-Rechner, nicht im Container. Der Hostname, um aus einem Container an den Hostrechner zu verbinden, ist `host.docker.internal`. 
 - Terminal im laufenden Docker-Container starten: `$ docker exec -it <CONTAINER-ID> /bin/bash`
 - Docker-Prozesse anzeigen: `$ docker ps`, um die Container-ID zu identifizieren
  
